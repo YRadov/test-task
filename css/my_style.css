@@ -1,0 +1,24 @@
+html, body, .main{
+    height: 100%;
+    width: 100%;
+}
+.content{
+    background-color: #cccccc;
+    height: 100%;
+    margin-top: 50px;
+}
+.footer{
+    color: #fff;
+}
+h2{text-align: center;}
+
+.menu li a:hover{
+    color: #fff;
+}
+
+h1{text-align: center;}
+
+.php{
+    text-align: center;
+    width: 400px;
+}
