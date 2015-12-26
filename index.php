@@ -1,6 +1,6 @@
 <?php
 require_once 'functions/funcs.php';
-$content = $_GET['task'];
+$content = ($_GET)?$_GET['task']:'html';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -39,10 +39,10 @@ $content = $_GET['task'];
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right menu">
-                  <li><a href="?task=html" class="task">HTML + CSS</a></li>
-                  <li><a href="?task=js" class="task">Javascript</a></li>
-                  <li><a href="?task=mysql" class="task">MySQL</a></li>
-                  <li><a href="?task=php" class="task">PHP</a></li>
+                  <li><a href="html" class="task">HTML + CSS</a></li>
+                  <li><a href="js-jq" class="task">Javascript</a></li>
+                  <li><a href="mysql" class="task">MySQL</a></li>
+                  <li><a href="php" class="task">PHP</a></li>
               </ul>
           </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -50,6 +50,7 @@ $content = $_GET['task'];
 <!--**************КОНТЕНТ***************************************-->
   <div class="container main">
       <div class="row content">
+          <?php //print_arr($content);?>
               <h2>Для просмотра результата выполнения выберите нужный пункт меню. </h2>
               <?php require_once '_content/'.$content.'.include.php'; ?>
       </div>

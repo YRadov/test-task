@@ -12,7 +12,7 @@ define('DB', 'bookimed');
 $mysqli = new mysqli(HOST, USER, PASS, DB);
 
 $query = "SELECT
-       c.id,
+     c.id,
 	   c.name AS cat,
 	   COUNT(n.id) AS qty,
 	   MIN(p.price) AS min_price,
