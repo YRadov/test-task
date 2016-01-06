@@ -2,6 +2,12 @@ html, body, .main{
     height: 100%;
     width: 100%;
 }
+
+.active{
+    border-bottom: 3px solid white;
+    color: white!important;
+}
+
 .content{
     background-color: #cccccc;
     height: 100%;
@@ -11,6 +17,10 @@ html, body, .main{
     color: #fff;
 }
 h2{text-align: center;}
+
+.menu{
+    padding-right: 20px;
+}
 
 .menu li a:hover{
     color: #fff;

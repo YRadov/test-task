@@ -6,13 +6,13 @@ define('USER', 'root');
 // пароль
 define('PASS', '');
 // БД
-define('DB', 'bookimed');
+define('DB', 'test_task');
 
 //СОЕДИНЕНИЕ с БД
 $mysqli = new mysqli(HOST, USER, PASS, DB);
 
 $query = "SELECT
-     c.id,
+       c.id,
 	   c.name AS cat,
 	   COUNT(n.id) AS qty,
 	   MIN(p.price) AS min_price,

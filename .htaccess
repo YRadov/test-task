@@ -1,11 +1,13 @@
+AddDefaultCharset utf-8
+
 <IfModule mod_rewrite.c>
   Options +FollowSymlinks
-  # Р’РєР»СЋС‡Р°РµРј mod_rewrite
+  # Включаем mod_rewrite
   RewriteEngine On
 
-  # Р•СЃР»Рё СЌС‚Рѕ РїР°РїРєР° РёР»Рё С„Р°Р№Р», РѕС‚РєСЂС‹РІР°РµРј РµС‘/РµРіРѕ
+  # Если это папка или файл, открываем её/его
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  # Р’ РїСЂРѕС‚РёРІРЅРѕРј СЃР»СѓС‡Р°Рµ РїРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РЅР° index.php
+  # В противном случае перенаправляем на index.php
   RewriteRule (.*) index.php?task=$1
 </IfModule>

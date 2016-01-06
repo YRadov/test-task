@@ -1,6 +1,7 @@
 <?php
 require_once 'functions/funcs.php';
 $content = ($_GET)?$_GET['task']:'html';
+$content = (getContent($content))?$content:'html';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -33,16 +34,16 @@ $content = ($_GET)?$_GET['task']:'html';
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-                  <a class="navbar-brand">Тестовое задание</a>
+                  <a class="navbar-brand" style="color: white;">Тестовое задание</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right menu">
-                  <li><a href="html" class="task">HTML + CSS</a></li>
-                  <li><a href="js-jq" class="task">Javascript</a></li>
-                  <li><a href="mysql" class="task">MySQL</a></li>
-                  <li><a href="php" class="task">PHP</a></li>
+                  <li><a href="html" class="task <?php if($content == 'html')echo 'active';?>">HTML + CSS</a></li>
+                  <li><a href="js-jq" class="task <?php if($content == 'js-jq')echo 'active';?>">Javascript</a></li>
+                  <li><a href="mysql" class="task <?php if($content == 'mysql')echo 'active';?>">MySQL</a></li>
+                  <li><a href="php" class="task <?php if($content == 'php')echo 'active';?>">PHP</a></li>
               </ul>
           </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -51,8 +52,8 @@ $content = ($_GET)?$_GET['task']:'html';
   <div class="container main">
       <div class="row content">
           <?php //print_arr($content);?>
-              <h2>Для просмотра результата выполнения выберите нужный пункт меню. </h2>
-              <?php require_once '_content/'.$content.'.include.php'; ?>
+          <h2>Для просмотра результата выполнения выберите нужный пункт меню. </h2>
+          <?php require_once '_content/'.$content.'.include.php'; ?>
       </div>
   </div>
 <!--***********************************************************-->
@@ -70,7 +71,7 @@ $content = ($_GET)?$_GET['task']:'html';
     <script src="js/bootstrap.min.js"></script>
     <script src="js/my_scripts.js"></script>
   <script>
-
+    $()
   </script>
   </body>
 </html>
